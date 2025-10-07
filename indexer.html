@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 19th Monthsarry</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            font-family: 'Georgia', serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.8);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .heart:nth-child(odd) {
+            animation-delay: -2s;
+        }
+
+        .heart:nth-child(even) {
+            animation-delay: -4s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10%, 90% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-10vh) rotate(180deg);
+                opacity: 0.8;
+            }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            z-index: 10;
+            position: relative;
+        }
+
+        h1 {
+            color: #d63384;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .message {
+            color: #6c757d;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin: 0;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .decorative-hearts {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            color: #ff69b4;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .message {
+                font-size: 1rem;
+                padding: 15px;
+            }
+            
+            .container {
+                margin: 20px;
+                padding: 30px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts Background -->
+    <div class="heart" style="left: 10%; animation-duration: 8s;">💖</div>
+    <div class="heart" style="left: 20%; animation-duration: 6s;">💕</div>
+    <div class="heart" style="left: 30%; animation-duration: 7s;">💗</div>
+    <div class="heart" style="left: 40%; animation-duration: 9s;">💖</div>
+    <div class="heart" style="left: 50%; animation-duration: 5s;">💕</div>
+    <div class="heart" style="left: 60%; animation-duration: 8s;">💗</div>
+    <div class="heart" style="left: 70%; animation-duration: 6s;">💖</div>
+    <div class="heart" style="left: 80%; animation-duration: 7s;">💕</div>
+    <div class="heart" style="left: 90%; animation-duration: 9s;">💗</div>
+    <div class="heart" style="left: 15%; animation-duration: 10s;">💖</div>
+    <div class="heart" style="left: 35%; animation-duration: 4s;">💕</div>
+    <div class="heart" style="left: 55%; animation-duration: 11s;">💗</div>
+    <div class="heart" style="left: 75%; animation-duration: 5s;">💖</div>
+    <div class="heart" style="left: 85%; animation-duration: 8s;">💕</div>
+
+    <div class="container">
+        <div class="decorative-hearts">💖 💕 💗</div>
+        
+        <h1>Happy 19th Monthsarry</h1>
+        
+        <p class="message">
+            Happy monthsarry nato love, layo na kaayo tag naabtan thank you for supporting me as always sa ahong school karon even though layo ta dili ta always maka meet kay busy atong mga schedule and soon magmeet rasad tag naay free time. Thank you for understanding my busy days also kay matic daghay buhatonon. Even layo ta love you are still the only girl i want always. I miss you Happy monthsarry lovee!
+        </p>
+    </div>
+
+    <script>
+        // Add more hearts dynamically for extra animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.innerHTML = ['💖', '💕', '💗'][Math.floor(Math.random() * 3)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            heart.style.animationDelay = Math.random() * 2 + 's';
+            document.body.appendChild(heart);
+            
+            // Remove heart after animation completes
+            setTimeout(() => {
+                if (heart.parentNode) {
+                    heart.parentNode.removeChild(heart);
+                }
+            }, 12000);
+        }
+
+        // Create new hearts periodically
+        setInterval(createHeart, 2000);
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98ada1a7106204cf',t:'MTc1OTg0MjU1MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
